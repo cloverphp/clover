@@ -20,7 +20,7 @@ const POST = 3000;
 
 $app->use($router);
 
-$router->get("/", fn($req, $res) => {
+$router->get("/", fn(Request $req, Response $res) => {
 $res->send('Welcome to 🍀 Clover PHP!');
 });
 
