@@ -1,5 +1,6 @@
-
 <?php
+
+namespace Clover;
 
 final class Router {
 
