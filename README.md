@@ -21,9 +21,20 @@ const POST = 3000;
 $app->use($router);
 
 $router->get("/", fn(Request $req, Response $res) => {
-$res->send('Welcome to 🍀 Clover PHP!');
+  $res->send('Welcome to 🍀 Clover PHP!');
 });
 
-$app->run(PORT, "Server starting");
+$router->post("/posts", fn(Request $req, Response $res) => {
+  $req->send(['name' => 'Clover PHP'])
+->json();
+});
+
+$app->run(PORT, fn() => {
+  if(!$error){
+    echo "Server starting". $app->logged();
+} else {
+echo "error". $app->logged();
+}
+});
 
 ```
