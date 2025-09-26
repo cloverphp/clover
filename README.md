@@ -24,6 +24,6 @@ $router->get("/", fn(Request $req, Response $res) => {
 $res->send('Welcome to 🍀 Clover PHP!');
 });
 
-$app->run(PORT, "Server starting);
+$app->run(PORT, "Server starting");
 
 ```
