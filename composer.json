@@ -1,11 +1,15 @@
 {
-    "name": "cloverphp/clover",
+    "name": "clover/clover",
     "description": "clover",
     "type": "project",
+    "keywords": ["clover","framework"],
     "license": "MIT",
+    "require": {
+        "php": "^8.3"
+    },
     "autoload": {
         "psr-4": {
-            "Cloverphp\\Clover\\": "src/"
+            "Clover\\Clover\\": "src/"
         }
     },
     "authors": [
@@ -15,5 +19,5 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "prefer-stable": true
 }
