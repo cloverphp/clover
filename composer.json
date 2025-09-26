@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Clover\\Clover\\": "src/"
+            "Clover\\": "src/"
         }
     },
     "autoload-dev":{
@@ -29,7 +29,7 @@
     "scripts": {
         "test": "vendor/bin/pest"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
         "phpstan/phpstan": "^2.1",
@@ -37,6 +37,9 @@
         "pestphp/pest": "^4.1"
     },
     "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "preferred-install": "dist",
         "allow-plugins": {
             "carthage-software/mago": true,
             "pestphp/pest-plugin": true
