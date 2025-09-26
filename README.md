@@ -1,17 +1,18 @@
 ## 🍀 Clover 
-A unopinionated php framework.
+A unopinionated **PHP** framework.
 
 
 
 ### Example
 ```php
+<?php
+
 require_once(__DIR__."/vendor/autoload.php");
 
 use Clover\Application;
 use Clover\Request;
 use Clover\Response;
 use Clover\Router;
-use Clover\View;
 
 $app = new Application();
 $router = new Router();
