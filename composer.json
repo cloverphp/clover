@@ -1,0 +1,19 @@
+{
+    "name": "cloverphp/clover",
+    "description": "clover",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cloverphp\\Clover\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sushil Kumar",
+            "email": "sushilkumbhar77@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
