@@ -122,7 +122,6 @@ $app->use(function (Request $req, Response $res, callable $next) {
 
 ## 🛡️ License
 
-Clover PHP is open-sourced software licensed under the ![Packagist License](https://img.shields.io/packagist/l/cloverphp/clover?style=flat&label=License&color=blue)
+Clover PHP is open-sourced software licensed under the [![Packagist License](https://img.shields.io/packagist/l/cloverphp/clover?style=flat&label=License&color=blue)](./LICENSE)
 
 ---
-
