@@ -1,14 +1,29 @@
 {
     "name": "cloverphp/clover",
     "description": "Clover: Clover PHP is a modern, unopinionated, and lightweight Express.js-style framework for PHP.",
-    "type": "project",
     "keywords": ["clover","framework"],
     "license": "MIT",
+    "homepage": "https://github.com/cloverphp/clover",
+    "support": {
+        "issues": "https://github.com/cloverphp/clover/issues",
+        "source": "https://github.com/cloverphp/clover"
+    },
+    "authors": [
+        {
+            "name": "Sushil Kumar",
+            "email": "sushilkumbhar77@gmail.com"
+        }
+    ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.2",
         "amphp/amp": "^3.1",
         "amphp/http-server": "^3.4",
         "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.1",
+        "phpstan/phpstan": "^2.1",
+        "laravel/pint": "^1.25"
     },
     "autoload": {
         "psr-4": {
@@ -20,29 +35,20 @@
             "Tests\\": "tests/"
         }
     },
-    "authors": [
-        {
-            "name": "Sushil Kumar",
-            "email": "sushilkumbhar77@gmail.com"
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "php-http/discovery": false,
+            "carthage-software/mago": true,
+            "pestphp/pest-plugin": true
         }
-    ],
+    },
     "scripts": {
         "test": "vendor/bin/pest"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require-dev": {
-        "phpstan/phpstan": "^2.1",
-        "laravel/pint": "^1.25",
-        "pestphp/pest": "^4.1"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true,
-        "preferred-install": "dist",
-        "allow-plugins": {
-            "carthage-software/mago": true,
-            "pestphp/pest-plugin": true
-        }
-    }
+    "prefer-stable": true
 }
