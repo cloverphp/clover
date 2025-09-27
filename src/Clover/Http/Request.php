@@ -1,12 +1,12 @@
 <?php
 
-namespace Clover;
+namespace Clover\Http;
 
 final class Request {
 
-  public function __construct($body=[]):void
+  public function __construct()
   {
-    return $body;
+      // return $body;
   }
 }
 
