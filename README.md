@@ -13,7 +13,7 @@ It helps you build REST APIs, web apps, and microservices with the simplicity of
 
 ---
 
-✨ Features
+## ✨ Features
 
 🚀 Minimal & Fast – Simple API design, inspired by Express.js.
 
@@ -39,17 +39,23 @@ It helps you build REST APIs, web apps, and microservices with the simplicity of
 
 ---
 
-📦 Installation
+## 📦 Installation
 
 ```bash
 composer create-project cloverphp/clover my-app
+```
+
+```bash
 cd my-app
+```
+
+```bash
 php -S localhost:3000 -t public
 ```
 
 ---
 
-🚀 Quick Start
+## 🚀 Quick Start
 
 ```php
 <?php
@@ -85,9 +91,10 @@ $app::run(3000, "Clover PHP running on http://localhost:3000");
 ```
 
 ---
-```bash
-📂 Project Structure
 
+## 📂 Project Structure
+
+```bash
 my-app/
 ├── app/
 │   ├── Controllers/
@@ -102,7 +109,8 @@ my-app/
 
 ---
 
-🔑 Example Middleware
+## 🔑 Example Middleware
+
 ```php
 $app->use(function (Request $req, Response $res, callable $next) {
     $res->setHeader("X-Powered-By", "Clover PHP");
@@ -112,10 +120,9 @@ $app->use(function (Request $req, Response $res, callable $next) {
 
 ---
 
-🛡️ License
+## 🛡️ License
 
-Clover PHP is open-sourced software licensed under the MIT License.
-
+Clover PHP is open-sourced software licensed under the ![Packagist License](https://img.shields.io/packagist/l/cloverphp/clover?style=flat&label=License&color=blue)
 
 ---
 
