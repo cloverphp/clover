@@ -1,6 +1,6 @@
 {
     "name": "cloverphp/clover",
-    "description": "clover",
+    "description": "Clover: A unopinionated php micro framework.",
     "type": "project",
     "keywords": ["clover","framework"],
     "license": "MIT",

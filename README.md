@@ -1,5 +1,7 @@
-## 🍀 Clover 
-A unopinionated **PHP** framework.
+## 🍀 Clover PHP
+
+Clover PHP is a modern, unopinionated, and lightweight Express.js-style framework for PHP 8.4.
+It helps you build REST APIs, web apps, and microservices with the simplicity of Express.js and the power of modern PHP.
 
 [![Tests](https://github.com/cloverphp/clover/actions/workflows/tests.yml/badge.svg)](https://github.com/cloverphp/clover/actions/workflows/tests.yml)
 ![Packagist Version](https://img.shields.io/packagist/v/cloverphp/clover?style=flat&logo=composer&logoColor=%23fff)
@@ -8,45 +10,112 @@ A unopinionated **PHP** framework.
 ![Packagist Downloads](https://img.shields.io/packagist/dt/cloverphp/clover?style=flat&logo=packagist&label=Downloads&color=blue)
 ![Packagist Stars](https://img.shields.io/packagist/stars/cloverphp/clover?style=flat&logo=github&logoColor=%23ffffff&label=%F0%9F%8C%9F%20Stars)
 
+
 ---
 
-### Example
-Clover PHP Starter template.
+✨ Features
+
+🚀 Minimal & Fast – Simple API design, inspired by Express.js.
+
+⚡ Async Support – Built with PHP Fibers & AMPHP for non-blocking I/O.
+
+🗂️ Routing System – Intuitive get(), post(), etc., with async router support.
+
+🔑 Auth Ready – Supports sessions, cookies, and JWT-based authentication.
+
+🧩 Extensible Middleware – Add global and route-level middleware for logging, security, and validation.
+
+💾 Database Agnostic – Works with both SQL and NoSQL databases.
+
+🛠️ MVC Support – Controllers, models, and views with interfaces for clean architecture.
+
+🛡️ Error Handling & Logging – Developer-friendly error responses and logging tools.
+
+🎨 Unopinionated – Flexible enough for small apps or large enterprise projects.
+
+📦 Composer & PSR-12 – Modern PHP practices with full Composer/PSR-12 compliance.
+
+
+
+---
+
+📦 Installation
+
+```bash
+composer create-project cloverphp/clover my-app
+cd my-app
+php -S localhost:3000 -t public
+```
+
+---
+
+🚀 Quick Start
 
 ```php
 <?php
-// server.php
 
-require_once(__DIR__ . "/vendor/autoload.php");
+require_once __DIR__ . "/vendor/autoload.php";
 
 use Clover\Application;
-use Clover\Router;
 use Clover\Request;
 use Clover\Response;
+use Clover\Router;
 
 $app = new Application();
 $router = new Router();
-const PORT = 3000;
 
 $app->use($router);
 
-// Routes
-$router->get("/", fn(Request $req, Response $res) => {
-    $res->send("Welcome to 🍀 Clover PHP!");
-});
+// Home route
+$router->get("/", fn(Request $req, Response $res) =>
+    $res->send("Welcome to 🍀 Clover PHP!")
+);
 
+// Example POST route
 $router->post("/posts", fn(Request $req, Response $res) => {
-    $res->json(['name' => 'Clover PHP']);
+    $data = $req->json();
+    $res->json([
+        "message" => "Post created successfully",
+        "data" => $data
+    ]);
 });
 
-// Run server with watch mode enabled
-$app->run(PORT, fn($error) => {
-    if (!$error) {
-        $app->success("Server started! Open in browser: http://localhost:" . PORT);
-    } else {
-        $app->error("Failed to start server: " . $error);
-    }
-}, true);
-
+// Start server
+$app::run(3000, "Clover PHP running on http://localhost:3000");
 ```
+
 ---
+```bash
+📂 Project Structure
+
+my-app/
+├── app/
+│   ├── Controllers/
+│   ├── Models/
+│   └── Views/
+├── public/
+│   └── index.php
+├── vendor/
+├── composer.json
+└── README.md
+```
+
+---
+
+🔑 Example Middleware
+```php
+$app->use(function (Request $req, Response $res, callable $next) {
+    $res->setHeader("X-Powered-By", "Clover PHP");
+    $next($req, $res);
+});
+```
+
+---
+
+🛡️ License
+
+Clover PHP is open-sourced software licensed under the MIT License.
+
+
+---
+
