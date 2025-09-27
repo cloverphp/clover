@@ -25,7 +25,7 @@ It helps you build REST APIs, web apps, and microservices with the simplicity of
 
 🧩 Extensible Middleware – Add global and route-level middleware for logging, security, and validation.
 
-💾 Database Agnostic – Works with both SQL and NoSQL databases.
+💾 Database Agnostic – Works with both SQL and NoSQL databases.(Upcoming)
 
 🛠️ MVC Support – Controllers, models, and views with interfaces for clean architecture.
 
