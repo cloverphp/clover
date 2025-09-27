@@ -1,11 +1,11 @@
 <?php
 
-namespace Clover;
+namespace Clover\Router;
 
 final class Router {
 
-  public function __construct($uri):void
+  public function __construct()
   {
-    return $uri;
+      // return $uri;
   }
 }

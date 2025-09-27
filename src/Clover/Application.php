@@ -4,9 +4,9 @@ namespace Clover;
 
 final class Application {
 
-  public function __construct($body=[]):void
+  public function __construct()
   {
-    return $body;
+      // return $body;
   }
 }
 
