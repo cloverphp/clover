@@ -70,7 +70,9 @@ $app = new Clover();
 $router = $app->router();
 
 // Home route
-$router->get("/", fn(Request $req, Response $res) => $res->send("<h1>Welcome to 🍀 Clover PHP!</h1>"));
+$router->get("/", fn(Request $req, Response $res) =>
+$res->send("<h1>Welcome to 🍀 Clover PHP!</h1>"));
+
 $router->post("/", fn(Request $req, Response $res) =>
     $res->json(['name' => 'Clover PHP!'])
 );
