@@ -62,32 +62,20 @@ php -S localhost:3000 -t public
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-use Clover\Application;
-use Clover\Request;
-use Clover\Response;
-use Clover\Router;
+use Clover\Clover;
+use Clover\Http\Request;
+use Clover\Http\Response;
 
-$app = new Application();
-$router = new Router();
-
-$app->use($router);
+$app = new Clover();
+$router = $app->router();
 
 // Home route
-$router->get("/", fn(Request $req, Response $res) =>
-    $res->send("Welcome to 🍀 Clover PHP!")
+$router->get("/", fn(Request $req, Response $res) => $res->send("<h1>Welcome to 🍀 Clover PHP!</h1>"));
+$router->post("/", fn(Request $req, Response $res) =>
+    $res->json(['name' => 'Clover PHP!'])
 );
 
-// Example POST route
-$router->post("/posts", fn(Request $req, Response $res) => {
-    $data = $req->json();
-    $res->json([
-        "message" => "Post created successfully",
-        "data" => $data
-    ]);
-});
-
-// Start server
-$app::run(3000, "Clover PHP running on http://localhost:3000");
+$app->run(3000, true);
 ```
 
 ---
