@@ -9,7 +9,7 @@ use Clover\Interfaces\RequestInterface;
 final class Request implements RequestInterface
 {
     private string $method;
-    private string $uri;
+    private string $path;
     private array $query;
     private array $body;
     private array $headers;
@@ -17,7 +17,7 @@ final class Request implements RequestInterface
     public function __construct()
     {
         $this->method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
-        $this->uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '/';
+        $this->path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
         $this->query = $_GET;
         $this->headers = getallheaders() ?: [];
 
@@ -35,9 +35,9 @@ final class Request implements RequestInterface
         return $this->method;
     }
 
-    public function getUri(): string
+    public function getPath(): string
     {
-        return $this->uri;
+        return $this->path;
     }
 
     public function getQuery(): array

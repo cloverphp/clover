@@ -6,7 +6,9 @@ namespace Clover\Interfaces;
 
 interface ResponseInterface
 {
-    public function send(string $data, int $status = 200): void;
+    public function status(int $code = 200): ResponseInterface;
 
-    public function json(array $data, int $status = 200): void;
+    public function send(string $body): void;
+
+    public function json(array $body): void;
 }

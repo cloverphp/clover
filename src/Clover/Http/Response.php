@@ -8,21 +8,25 @@ use Clover\Interfaces\ResponseInterface;
 
 final class Response implements ResponseInterface
 {
-    private array $data;
-    private int $status;
+    public int $statusCode = 200;
 
-    public function send(string $data, int $status = 200): void
+    public function send(array|string $body): void
     {
-        http_response_code($status);
-        echo $data;
-        exit;
+        echo $body;
+        exit(1);
     }
 
-    public function json(array $data, int $status = 200): void
+    public function status(int $code = 200): ResponseInterface
     {
-        http_response_code($status);
+        $this->statusCode = $code;
+       // http_response_code($code);
+        return $this;
+    }
+
+    public function json(array $body): void
+    {
         header("Content-Type: application/json");
-        echo json_encode($data, JSON_PRETTY_PRINT);
+        echo json_encode($body, JSON_PRETTY_PRINT);
         exit;
     }
 }
