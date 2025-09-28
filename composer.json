@@ -1,7 +1,12 @@
 {
     "name": "cloverphp/clover",
     "description": "Clover: Clover PHP is a modern, unopinionated, and lightweight Express.js-style framework for PHP.",
-    "keywords": ["clover","framework"],
+    "keywords": [
+        "clover",
+        "framework",
+        "cloverphp"
+    ],
+    "type": "project",
     "license": "MIT",
     "homepage": "https://github.com/cloverphp/clover",
     "support": {
