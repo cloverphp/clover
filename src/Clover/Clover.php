@@ -4,49 +4,84 @@ declare(strict_types=1);
 
 namespace Clover;
 
-use Clover\Application;
+use Clover\Router\Router;
+use Dotenv\Dotenv;
+use Clover\Http\Response;
+use Clover\Http\Request;
 
 class Clover
 {
-    private readonly int $port;
-    private readonly string $message;
-    private object $application;
-    private readonly string $path;
-    private $body;
+    protected ?Router $router = null;
 
-    public function __construct()
+    // Lazy initialize router
+    public function router(): Router
     {
-        $application = new Application();
+        if ($this->router === null) {
+            $this->router = new Router();
+        }
+        return $this->router;
     }
 
-    public function get($path, $body
-    )
+    // Mount a sub-router at a prefix
+    public function use(string $prefix, Router $router): void
     {
-        $this->path = $path;
-        $this->body = $body;
+        $this->router()->mount($prefix, $router);
     }
 
-    public function post(
-        string $path,
-        callable $body
-    )
+    public function run(?int $port, ?bool $devMode = null): void
     {
-        $this->path = $path;
-        $this->body = $body;
-    }
+        // --- Load .env ---
+        $dotenvPath = dirname(__DIR__, 2);
+        if (file_exists($dotenvPath . '/.env')) {
+            $dotenv = Dotenv::createImmutable($dotenvPath);
+            $dotenv->load();
+        }
 
-    public function send(){
-        //$application->getBody();
-    }
+        // --- Auto-detect dev mode ---
+        if ($devMode === null) {
+            $devMode = (php_sapi_name() === 'cli');
+        }
 
-    public function run(
-        int $port,
-        string $msg
-    )
-    {
-        $this->port = $port;
-        $this->message = $msg;
-        $url = "localhost:{$port}";
-        shell_exec("php -S $url");
+        if ($devMode) {
+            ini_set('display_errors', '1');
+            ini_set('display_startup_errors', '1');
+            error_reporting(E_ALL);
+        } else {
+            ini_set('display_errors', '0');
+            ini_set('display_startup_errors', '0');
+            error_reporting(0);
+        }
+
+        // --- Port Priority ---
+        $finalPort = $port
+            ?? ($_ENV['PORT'] ?? getenv('PORT'))
+            ?? 3000;
+
+        try {
+            //$callback();
+
+            $green = "\033[32m";
+            $reset = "\033[0m";
+            $green . "✅ Server running at: http://localhost:$finalPort" . $reset . PHP_EOL;
+            shell_exec("php -S localhost:{$finalPort}");
+            $req = new Request();
+            $res = new Response();
+
+            $this->router()
+                 ->dispatch($req, $res);
+
+
+        } catch (\Throwable $e) {
+            $red = "\033[31m";
+            $reset = "\033[0m";
+
+            echo $red . "❌ Server failed: " . $e->getMessage() . $reset . PHP_EOL;
+            // $e->getMessage();
+
+            if ($devMode) {
+                echo $e->getTraceAsString() . PHP_EOL;
+            }
+            exit(1);
+        }
     }
 }
