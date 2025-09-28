@@ -1,6 +1,6 @@
 {
     "name": "cloverphp/clover",
-    "description": "Clover: Clover PHP is a modern, unopinionated, and lightweight Express.js-style framework for PHP.",
+    "description": "Clover PHP: a modern, unopinionated, and lightweight framework.",
     "keywords": [
         "clover",
         "framework",
@@ -21,16 +21,13 @@
     ],
     "require": {
         "php": "^8.2",
-        "amphp/amp": "^3.1",
-        "amphp/http-server": "^3.4",
-        "psr/log": "^3.0",
-        "vlucas/phpdotenv": "^5.6"
+        "cloverphp/framework": "^0.0.1"
     },
     "require-dev": {
+        "fakerphp/faker": "^1.24",
         "laravel/pint": "^1.25",
-        "pestphp/pest": "^4.1",
-        "phpstan/phpstan": "^2.1",
-        "symfony/var-dumper": "^7.3"
+        "mockery/mockery": "^1.6",
+        "phpunit/phpunit": "^12.3"
     },
     "autoload": {
         "psr-4": {
