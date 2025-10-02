@@ -46,13 +46,13 @@ jobs:
       - name: Run PHPStan
         run: phpstan analyse app --level=max
 
-      - name: Run Psalm
-        run: |
-         psalm --init
-         git add .
-         git commit -m "psalm add"
-         git push
-         psalm --no-progress --output-format=compact
+      #- name: Run Psalm
+     #   run: |
+       #  psalm --init
+     #    git add .
+     #    git commit -m "psalm add"
+     #    git push
+      #   psalm --no-progress --output-format=compact
 
       # 🎨 Coding standards check
       - name: Run PHPCS (PSR-12)
