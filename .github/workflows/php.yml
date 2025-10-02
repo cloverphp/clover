@@ -43,7 +43,7 @@ jobs:
           php -d pcov.enabled=1 vendor/bin/pest --coverage --colors=never
 
       - name: Upload coverage report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pest-coverage-${{ matrix.php-version }}
           path: coverage/
