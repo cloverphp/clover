@@ -60,7 +60,7 @@ jobs:
 
       # 🧪 PHPUnit with Coverage
       - name: Run PHPUnit
-        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+        run: vendor/bin/pest --coverage
 
       # 📊 Upload coverage report to Codecov (optional)
       - name: Upload coverage to Codecov
