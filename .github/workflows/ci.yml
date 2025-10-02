@@ -1,4 +1,4 @@
-name: JsonDB CI
+name: CI
 
 on:
   push:
@@ -44,7 +44,7 @@ jobs:
 
       # 🐞 Static analysis for potential bugs
       - name: Run PHPStan
-        run: phpstan analyse src --level=max
+        run: phpstan analyse app --level=max
 
       - name: Run Psalm
         run: psalm --no-progress --output-format=compact
