@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Clover\\": "src/Clover/"
+            "Clover\\App\\": "app/"
         }
     },
     "autoload-dev":{

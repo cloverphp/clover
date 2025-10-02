@@ -1,4 +1,4 @@
-<?php // phpcs:ignoreFile ?>
+<?php // phpcs:ignoreFile?>
 <!DOCTYPE html>
 <html>
 <head>
