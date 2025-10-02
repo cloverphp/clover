@@ -1,5 +1,8 @@
 <?php
+
 declare(strict_types=1);
+
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -10,10 +13,10 @@ final class ExampleTest extends TestCase
         return $a + $b;
     }
 
-    public function testAddTwoNumbers(): void
+    public function test_add_two_numbers(): void
     {
         $result = $this->add(2, 3);
 
-        $this->assertEquals(5, $result, "2 + 3 should equal 5");
+        $this->assertEquals(5, $result, '2 + 3 should equal 5');
     }
 }
