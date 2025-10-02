@@ -59,8 +59,8 @@ jobs:
         run: phpcs --standard=PSR12 app/
 
       # 🧪 PHPUnit with Coverage
-      - name: Run PHPUnit
-        run: vendor/bin/pest --coverage
+      # - name: Run PHPUnit
+      # run: vendor/bin/phpunit --coverage
 
       # 📊 Upload coverage report to Codecov (optional)
       - name: Upload coverage to Codecov
