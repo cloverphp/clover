@@ -3,6 +3,7 @@
 Clover PHP is a modern, unopinionated, and lightweight Express.js-style framework for PHP 8.4.
 It helps you build REST APIs, web apps, and microservices with the simplicity of Express.js and the power of modern PHP.
 
+[![CodeQL](https://github.com/cloverphp/clover/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/cloverphp/clover/actions/workflows/github-code-scanning/codeql)
 [![Tests](https://github.com/cloverphp/clover/actions/workflows/tests.yml/badge.svg)](https://github.com/cloverphp/clover/actions/workflows/tests.yml)
 ![Packagist Version](https://img.shields.io/packagist/v/cloverphp/clover?style=flat&logo=composer&logoColor=%23fff)
 ![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/cloverphp/clover/php?style=flat&logo=php&logoColor=blue&label=PHP&color=blue)
