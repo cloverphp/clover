@@ -4,4 +4,6 @@ declare(strict_types=1);
 
 namespace Clover\App\Controllers;
 
-class HomeController {}
+class HomeController {
+    // Home Controller
+}

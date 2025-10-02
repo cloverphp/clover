@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e464e54daab503a5ace389f0f81f9722",
+    "content-hash": "3fd3b862a57265fe7fa350ae6542edec",
     "packages": [
         {
             "name": "cloverphp/async",
@@ -2704,7 +2704,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.3"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
