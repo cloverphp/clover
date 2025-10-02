@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="3"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://getpsalm.org/schema/config"
+>
+    <projectFiles>
+        <directory name="app" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <plugins>
+        <!-- Example: add Psalm plugins if needed -->
+        <!-- <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin"/> -->
+    </plugins>
+</psalm>
