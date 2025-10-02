@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . "/vendor/autoload.php";
-require_once __DIR__ . "/router/routes.php";
+require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/router/routes.php';
 
 use Clover\Clover;
 
-$app = new Clover();
+$app = new Clover;
 
 $app->run(3000, true);
