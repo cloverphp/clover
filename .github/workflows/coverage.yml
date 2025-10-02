@@ -23,16 +23,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          extensions: mbstring, intl, pdo_mysql, sqlite, redis
-          tools: composer:v2, phpunit, phpstan, phpcs, psalm
-          ini-values: |
-            post_max_size=256M
-            upload_max_filesize=256M
-            memory_limit=1G
-            max_execution_time=120
-
-      - name: Validate PHP
-        run: php -v
 
       - name: Install dependencies
         run: |
@@ -41,26 +31,6 @@ jobs:
           else
             composer update --no-progress --no-interaction
           fi
-
-      # 🐞 Static analysis for potential bugs
-      - name: Run PHPStan
-        run: phpstan analyse app --level=max
-
-      #- name: Run Psalm
-     #   run: |
-       #  psalm --init
-     #    git add .
-     #    git commit -m "psalm add"
-     #    git push
-      #   psalm --no-progress --output-format=compact
-
-      # 🎨 Coding standards check
-      - name: Run PHPCS (PSR-12)
-        run: phpcs --standard=PSR12 app/
-
-      # 🧪 PHPUnit with Coverage
-      # - name: Run PHPUnit
-      # run: vendor/bin/phpunit --coverage
 
       # 📊 Upload coverage report to Codecov (optional)
       - name: Upload coverage to Codecov

@@ -27,7 +27,8 @@
         "fakerphp/faker": "^1.24",
         "laravel/pint": "^1.25",
         "mockery/mockery": "^1.6",
-        "phpunit/phpunit": "^12.3"
+        "pestphp/pest": "^4.1",
+        "phpstan/phpstan": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -44,13 +45,16 @@
         "preferred-install": "dist",
         "optimize-autoloader": true,
         "allow-plugins": {
+            "carthage-software/mago": true,
             "composer/package-versions-deprecated": true,
+            "pestphp/pest-plugin": true,
             "php-http/discovery": true
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "lint": "vendor/bin/pint"
+        "test": "vendor/bin/pest",
+        "lint": "vendor/bin/pint",
+        "type": "vendor/bin/phpstan analyse app --level=max"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
