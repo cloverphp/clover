@@ -1,0 +1,49 @@
+name: PHP CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pest:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['8.2', '8.3', '8.4']  # test multiple PHP versions
+        dependencies: [lowest, highest]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v3
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: xdebug, pcov
+          coverage: pcov
+          tools: composer, pecl
+          ini-values: |
+            memory_limit=2G
+            error_reporting=E_ALL
+            display_errors=1
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-interaction
+
+      - name: Verify PHP extensions
+        run: php -m | grep -E 'xdebug|pcov'
+
+      - name: Run Pest with coverage
+        run: |
+          echo "Using PCOV for coverage..."
+          php -d pcov.enabled=1 vendor/bin/pest --coverage --colors=never
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: pest-coverage-${{ matrix.php-version }}
+          path: coverage/
