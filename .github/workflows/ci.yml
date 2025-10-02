@@ -51,7 +51,7 @@ jobs:
 
       # 🎨 Coding standards check
       - name: Run PHPCS (PSR-12)
-        run: phpcs --standard=PSR12 src/
+        run: phpcs --standard=PSR12 app/
 
       # 🧪 PHPUnit with Coverage
       - name: Run PHPUnit
