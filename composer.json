@@ -54,7 +54,8 @@
     "scripts": {
         "test": "vendor/bin/pest",
         "lint": "vendor/bin/pint",
-        "type": "vendor/bin/phpstan analyse app --level=max"
+        "type": "vendor/bin/phpstan analyse app --level=max",
+        "pcov": "vendor/bin/pest --coverage --coverage-php=coverage.cov"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

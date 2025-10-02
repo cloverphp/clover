@@ -34,3 +34,6 @@ jobs:
 
     - name: Run test suite
       run: composer run-script test
+
+    - name: Run code Coverage
+      run: composer run-script pcov
