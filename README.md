@@ -1,4 +1,4 @@
-## 🍀 Clover PHP
+![CloverPHP](./.github/art/logo.png)
 
 Clover PHP is a modern, unopinionated, and lightweight Express.js-style framework for PHP 8.4.
 It helps you build REST APIs, web apps, and microservices with the simplicity of Express.js and the power of modern PHP.
