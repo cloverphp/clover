@@ -13,4 +13,3 @@ $router = $app->router();
 $router->get('/', function (Request $req, Response $res) {
     $res->send('Hello from Clover PHP');
 });
-
