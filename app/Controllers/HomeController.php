@@ -6,5 +6,8 @@ namespace Clover\App\Controllers;
 
 class HomeController
 {
-    // Home Controller
+    public function index()
+    {
+        return view('home');
+    }
 }

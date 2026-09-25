@@ -63,9 +63,9 @@ php -S localhost:3000 -t public
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-use Clover\Clover;
-use Clover\Http\Request;
-use Clover\Http\Response;
+use Clover\Framework\Clover;
+use Clover\Framework\Http\Request;
+use Clover\Framework\Http\Response;
 
 $app = new Clover();
 $router = $app->router();
@@ -110,6 +110,14 @@ $app->use(function (Request $req, Response $res, callable $next) {
 ```
 
 ---
+
+## Start server
+```bash
+cd public
+
+php index.php
+```
+Server running on 3000 port and open `http://localhost:3000` 
 
 ## 🛡️ License
 
