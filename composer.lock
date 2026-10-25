@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7aba0d1ade831371c21d49ae717dee84",
+    "content-hash": "5f72b0b927ed6662c632e08c35acc0ef",
     "packages": [
         {
             "name": "cloverphp/framework",
@@ -212,6 +212,49 @@
                 }
             ],
             "time": "2026-08-24T00:54:40+00:00"
+        },
+        {
+            "name": "pulsephp/pulse",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codebysushil/pulse.git",
+                "reference": "374b439db73ecb79bc0a8c85bd36c4f937477397"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codebysushil/pulse/zipball/374b439db73ecb79bc0a8c85bd36c4f937477397",
+                "reference": "374b439db73ecb79bc0a8c85bd36c4f937477397",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Pulse\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sushil Kumar",
+                    "email": "sushilkumbhar77@gmail.com"
+                }
+            ],
+            "description": "💗 PulsePHP: async library provide event loop, promises and async/await like syntax.",
+            "support": {
+                "issues": "https://github.com/codebysushil/pulse/issues",
+                "source": "https://github.com/codebysushil/pulse/tree/v1.0.1"
+            },
+            "time": "2026-09-28T06:17:23+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
